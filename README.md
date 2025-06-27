@@ -1,69 +1,65 @@
-# React + TypeScript + Vite
+# Resume App Codebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern resume web app built with React, TypeScript, and Vite. It is structured for modularity, maintainability, and SEO best practices.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+app/
+├── public/                # Static assets (images, favicon, etc.)
+├── src/                   # Main source code
+│   ├── components/        # Reusable React components
+│   │   ├── common/        # Shared utilities/components (e.g., Microdata)
+│   │   ├── Print/         # Print-specific components (e.g., PageBreak)
+│   │   └── ...            # Resume sections (Header, ContactInfo, etc.)
+│   ├── data/              # Resume content and structured data
+│   │   ├── profile.json   # Main profile (schema.org Person JSON-LD)
+│   │   └── *.md            # Experience, skills, education, etc.
+│   ├── lib/               # Utility libraries (date, link, class helpers)
+│   ├── App.tsx            # Main app component
+│   ├── main.tsx           # Entry point
+│   └── App.css            # Global styles
+├── index.html             # HTML template
+├── package.json           # Project metadata and scripts
+└── ...                    # Config files (Vite, TypeScript, ESLint)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Key Concepts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. **Schema.org Person Microdata**
+- The file `src/data/profile.json` contains your profile as a [schema.org Person](https://schema.org/Person) in JSON-LD format.
+- This enables rich search engine results and better SEO.
+- Example fields: `name`, `jobTitle`, `address`, `worksFor`, `sameAs` (social links), etc.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 2. **Microdata Injection**
+- The `Microdata` component (`src/components/common/Microdata.tsx`) injects the JSON-LD from `profile.json` into the page as a `<script type="application/ld+json">` tag.
+- The `Header` component imports and uses this microdata, ensuring your profile is discoverable by search engines.
+
+### 3. **Content Organization**
+- All resume content (experience, skills, education, etc.) is stored in Markdown or JSON files in `src/data/` for easy editing and localization.
+- Components in `src/components/` are organized by function and reusability. Common utilities are in `common/`, and print-specific logic is in `Print/`.
+- Utility functions (date formatting, class helpers, etc.) are in `src/lib/`.
+
+## Development
+
+- **Install dependencies:**
+  ```bash
+  npm install
+  ```
+- **Run the dev server:**
+  ```bash
+  npm run dev
+  ```
+- **Build for production:**
+  ```bash
+  npm run build
+  ```
+
+## Customization
+- Update `src/data/profile.json` with your own information.
+- Add or edit content in `src/data/` for your experience, skills, etc.
+- Customize components or styles as needed.
+
+---
+
+For more details, see the inline comments in each file or open an issue for help.

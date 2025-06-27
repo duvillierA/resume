@@ -2,6 +2,8 @@
 
 This project is a modern resume web app built with React, TypeScript, and Vite. It is structured for modularity, maintainability, and SEO best practices.
 
+[View the live version](https://resume-rosy-one-38.vercel.app/)
+
 ## Project Structure
 
 ```

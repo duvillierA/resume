@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "company": "Virtuo",
+      "title": "Lead Front-End Developer",
+      "start_date": "2017-01",
+      "end_date": null,
+      "remote": true,
+      "link": "https://www.govirtuo.com",
+      "introduction": "**Virtuo** is a pioneering **digital car rental company**, revolutionizing the rental experience through a seamless, app-driven platform. By eliminating traditional rental counters, Virtuo enables users to book, unlock, and manage rentals entirely from their smartphones.",
+      "description": [
+        "- **Built** isomorphic websites using _TypeScript, React, Next.js, SCSS/TailwindCSS, Node.js, Express.js, and Prismic_.",
+        "- **Developed from scratch** customer, business, and blog websites.",
+        "- **Architected** mono-repo infrastructure with a _shared design system_ via Storybook.",
+        "- **Enhanced** API interaction within microservices using _typed contracts_.",
+        "- **Built** dynamic Mail micro-service with _React and PDF streaming_.",
+        "- **Integrated** Stripe payments and _advanced email templating_."
+      ]
+    },
+    {
+      "company": "Virtuo",
+      "title": "Full-Stack Developer",
+      "start_date": "2015-12",
+      "end_date": "2017-01",
+      "present": false,
+      "remote": false,
+      "link": "https://www.govirtuo.com",
+      "description": [
+        "- Developed MongoDB mobile services and admin tools.",
+        "- Integrated Stripe (cards, transfers, connected accounts).",
+        "- Built business management and referral systems."
+      ]
+    },
+    {
+      "company": "Viadeo",
+      "title": "Front-End Engineer",
+      "start_date": "2012-01",
+      "end_date": "2015-12",
+      "present": false,
+      "remote": false,
+      "description": [
+        "- Worked in Paris and relocated to San Francisco for international project.",
+        "- Created client-side apps with Ember.js, Backbone.js, jQuery and ES6 modules.",
+        "- Built features like \"People You Should Meet\" with responsive design.",
+        "- Wrote server-side tests with Mocha, Chai, CasperJS, and Zombie."
+      ]
+    },
+    {
+      "company": "NOVEN",
+      "title": "Front-End Developer",
+      "start_date": "2011-09",
+      "end_date": "2012-01",
+      "present": false,
+      "remote": false,
+      "description": [
+        "- Developed frontend for digital agencies and integrated with Drupal."
+      ]
+    },
+    {
+      "company": "Black Meridian",
+      "title": "Front-End Developer",
+      "start_date": "2009-01",
+      "end_date": "2011-12",
+      "present": false,
+      "remote": false,
+      "description": [
+        "- Delivered front-end projects for agencies using Modx CMS."
+      ]
+    }
+  ]
+} 

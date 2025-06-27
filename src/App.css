@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: oklch(.97 0 0);
+  --color-foreground: oklch(.300 0 0);
+  --color-heading: oklch(.205 0 0);
+  --color-muted-foreground: oklch(.500 0 0);
+  --font-size-root: 14px;
+  --font-size-base: 1rem;
+}
+
+.dark {
+  --color-background: oklch(.100 0 0);
+  --color-foreground: oklch(.900 0 0);
+  --color-heading: oklch(.800 0 0);
+  --color-muted-foreground: oklch(.600 0 0);
+}
+
+@theme inline {
+    --color-background: var(--color-background);
+    --color-foreground: var(--color-foreground);
+    --color-heading: var(--color-heading);
+    --color-muted-foreground: var(--color-muted-foreground);
+}
+
+@layer base {
+
+  html {
+    font-size: var(--font-size-root);
+  }
+
+  body {
+      background-color: var(--color-background);
+      color: var(--color-foreground);
+      font-size: var(--font-size-base);
+      font-family: var(--font-family-sans);
+  }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-left: 1rem;
+  }
+
+  p, ul > li {
+    strong {
+      @apply font-semibold;
+    }
+  }
+
+  a {
+      text-decoration: underline;
+  }
+
+
+  @media print {
+      [data-page-break-before="always"] {
+          display: block;
+          page-break-before: always;
+      }
+
+      [data-page-break-before="avoid"] {
+          display: block;
+          page-break-before: avoid;
+      }
+
+      [data-page-break-after="always"] {
+          display: block;
+          page-break-after: always;
+      }
+
+      [data-page-break-after="avoid"] {
+          display: block;
+          page-break-after: avoid;
+      }
+  }
+
+  @page {
+      size: A4;
+      margin: 0.5cm;
+  }
+
+}

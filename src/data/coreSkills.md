@@ -1,0 +1,6 @@
+- **Frontend:** React, TypeScript, Next.js (App Router), Vite, TurboRepo, Redux, Hooks, Context API
+- **Styling:** Tailwind CSS, SCSS, CSS Modules, HTML5, Responsive Design
+- **Testing:** Vitest, Playwright
+- **Backend:** Node.js, Express.js, MongoDB, Redis
+- **Tooling:** Git, Webpack, Prismic, CI/CD, Vercel
+- **Design:** Figma, Photoshop 

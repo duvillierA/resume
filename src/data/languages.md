@@ -1,0 +1,2 @@
+- **French:** Native
+- **English:** Full professional 

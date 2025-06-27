@@ -1,0 +1,4 @@
+- **Built and maintained** mono-repo architecture across _multiple platforms_
+- **Created** a shared design system using _Storybook & Tailwind CSS / CSS Modules_
+- **Integrated** Stripe, Prismic, and _cross-platform mail services_
+- **Optimized** Core Web Vitals for _improving page load time by 30/50% and boosting SEO rankings_ 

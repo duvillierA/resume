@@ -1,0 +1,4 @@
+- **Mentored** junior developers and **led** front-end teams
+- **Proposed and led** architecture redesigns for _performance_
+- **Collaborated** with design teams to improve _UX/UI consistency_
+- **Advocated** for clean code and _scalable component structure_ 

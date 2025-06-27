@@ -1,0 +1,4 @@
+- **Git & Advanced JavaScript** (2013)
+- **Alsacréations** - jQuery & AJAX, JavaScript (2011)
+- **F2i** - Web Developer Training (2009-2010)
+- **Lycée Alain** - Baccalauréat ES, Math Major (2007-2008) 

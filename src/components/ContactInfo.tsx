@@ -33,5 +33,9 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ email, github, linkedi
     <dd>
       <a href={companyUrl}>{company}</a>
     </dd>
+    <dt>Source code</dt>
+    <dd>
+      <a href={`https://github.com/duvillierA/resume`}>https://github.com/duvillierA/resume</a>
+    </dd>
   </dl>
 );

@@ -1,27 +1,12 @@
 import { Avatar } from "@/components/Avatar";
-import { ContactInfo } from "@/components/ContactInfo";
+import type { PropsWithChildren } from "react";
 
 interface HeaderProps {
   name: string;
   title: string;
-  email?: string;
-  github: string;
-  linkedin: string;
-  company: string;
-  companyUrl: string;
-  location: string;
 }
 
-export const Header = ( {
-  name,
-  title,
-  email,
-  github,
-  linkedin,
-  company,
-  companyUrl,
-  location
-}: HeaderProps) => {
+export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({ name, title, children }) => {
 
   return (
     <header>
@@ -29,14 +14,7 @@ export const Header = ( {
       <div>
         <h1 className="text-3xl font-bold text-heading">{name}</h1>
         <p className="text-xl text-foreground">{title}</p>
-        <ContactInfo
-          email={email}
-          github={github}
-          company={company}
-          linkedin={linkedin}
-          companyUrl={companyUrl}
-          location={location}
-        />
+        {children}
       </div>
       <Avatar src="/portrait.jpg" alt={name} />
     </div>

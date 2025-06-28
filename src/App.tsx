@@ -1,11 +1,21 @@
+// Styles
 import "./App.css";
-import ReactMarkdown from "react-markdown";
+
+// Utilities
 import { isHttpsUrl } from "@/lib/link";
 import { isPartialDate } from "@/lib/date";
+
+// Components
 import { Section } from "@/components/Section";
 import { ExperienceItem } from "@/components/ExperienceItem";
 import { Header } from "@/components/Header";
 import { PageBreak } from "@/components/Print/PageBreak";
+import { Microdata } from "@/components/common/Microdata";
+import { ContactInfo } from "@/components/ContactInfo";
+import { Markdown } from "@/components/common/Markdown";
+
+// Data
+import { profile } from "@/data/profile";
 import professionalSummary from "@/data/summary.md";
 import professionalExperience from "@/data/professionalExperience.json";
 import coreSkills from "@/data/coreSkills.md";
@@ -13,8 +23,6 @@ import technicalHighlights from "@/data/technicalHighlights.md";
 import leadershipCollaboration from "@/data/leadershipCollaboration.md";
 import education from "@/data/education.md";
 import languages from "@/data/languages.md";
-import profile from "@/data/profile.json";
-import { Microdata } from "@/components/common/Microdata";
 
 function App() {
   return (
@@ -23,15 +31,18 @@ function App() {
       <Header
         name={profile.name}
         title={profile.jobTitle}
-        email={profile.email}
-        linkedin={profile.sameAs[0]}
-        github={profile.sameAs[1]}
-        company={profile.worksFor.name}
-        companyUrl={profile.worksFor.url}
-        location={profile.location}
-      />
-      <Section title="Professional Summary">
-        <ReactMarkdown>{professionalSummary}</ReactMarkdown>
+      >
+        <ContactInfo
+          email={profile.email}
+          github={profile.sameAs[1]}
+          company={profile.worksFor.name}
+          linkedin={profile.sameAs[0]}
+          companyUrl={profile.worksFor.url}
+          location={profile.location}
+        />
+      </Header>
+      <Section title="Professional Summary" asMarkdown>
+        {professionalSummary}
       </Section>
       <Section title="Professional Experience">
         {professionalExperience.items.map((item, idx: number) => (
@@ -43,26 +54,26 @@ function App() {
             end_date={isPartialDate(item.end_date) ? item.end_date : null}
             remote={item.remote}
             link={isHttpsUrl(item.link) ? item.link : undefined}
-            introduction={!!item.introduction && <ReactMarkdown>{item.introduction}</ReactMarkdown>}
-            description={<ReactMarkdown>{item.description.join("\n")}</ReactMarkdown>}
+            introduction={!!item.introduction && <Markdown>{item.introduction}</Markdown>}
+            description={<Markdown>{item.description.join("\n")}</Markdown>}
           />
         ))}
       </Section>
       <PageBreak position="before" variant="always"  />
-      <Section title="Core Skills">
-        <ReactMarkdown>{coreSkills}</ReactMarkdown>
+      <Section title="Core Skills" asMarkdown>
+        {coreSkills}
       </Section>
-      <Section title="Technical Highlights">
-        <ReactMarkdown>{technicalHighlights}</ReactMarkdown>
+      <Section title="Technical Highlights" asMarkdown>
+        {technicalHighlights}
       </Section>
-      <Section title="Leadership & Collaboration">
-        <ReactMarkdown>{leadershipCollaboration}</ReactMarkdown>
+      <Section title="Leadership & Collaboration" asMarkdown>
+        {leadershipCollaboration}
       </Section>
-      <Section title="Education">
-        <ReactMarkdown>{education}</ReactMarkdown>
+      <Section title="Education" asMarkdown>
+        {education}
       </Section>
-      <Section title="Languages">
-        <ReactMarkdown>{languages}</ReactMarkdown>
+      <Section title="Languages" asMarkdown>
+        {languages}
       </Section>
     </main>
   );

@@ -5,10 +5,6 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vite.dev/config/
 export default defineConfig({
-  define: {
-    __APP_ENV__: process.env.VITE_VERCEL_ENV,
-    __APP_EMAIL__: process.env.PROFILE_EMAIL,
-  },
   plugins: [react(), tailwindcss(), tsconfigPaths(),
   // Custom plugin to load markdown files
   {

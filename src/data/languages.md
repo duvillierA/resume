@@ -1,2 +1,2 @@
 - **French:** Native
-- **English:** Full professional 
+- **English:** Full professional proficiency

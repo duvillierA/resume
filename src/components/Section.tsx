@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/class";
+import { cn } from "@/lib/utils";
 import { Markdown } from "@/components/common/Markdown";
 
 type MarkdownContent = Parameters<typeof Markdown>[0]['children'];

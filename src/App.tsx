@@ -13,6 +13,8 @@ import { PageBreak } from "@/components/Print/PageBreak";
 import { Microdata } from "@/components/common/Microdata";
 import { ContactInfo } from "@/components/ContactInfo";
 import { Markdown } from "@/components/common/Markdown";
+import { WorkMode } from "@/components/WorkMode";
+import { Skill } from "@/components/Skill";
 
 // Data
 import { profile } from "@/data/profile";
@@ -31,6 +33,15 @@ function App() {
       <Header
         name={profile.name}
         title={profile.jobTitle}
+        tags={[
+          <Skill skill="Node.js" />,
+          <Skill skill="React" />,
+          <Skill skill="TypeScript" />,
+          <Skill skill="Next.js" />,
+          <Skill skill="Tailwind CSS" />,
+          <WorkMode workMode="full-remote" />,
+          <WorkMode workMode="hybrid" />,
+        ]}
       >
         <ContactInfo
           email={profile.email}

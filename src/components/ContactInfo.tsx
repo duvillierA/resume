@@ -31,18 +31,19 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ company, companyUrl, e
 
 interface ContactInfoItemProps {
   label: string;
-  value: string;
+  value: React.ReactNode;
   href?: string;
   leftElement?: React.ReactNode;
+  rightElement?: React.ReactNode;
 }
 
-const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ label, value, href, leftElement }) => (
+const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ label, value, href, leftElement, rightElement }) => (
   <>
     <dt className="flex items-center gap-2">
       {leftElement}
       {label}
     </dt>
-    <dd>
+    <dd className="flex items-center gap-2">
       {href ? (
         <a href={href}>
           {value}
@@ -50,6 +51,7 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ label, value, href, l
       ) : (
         value
       )}
+      {rightElement}
     </dd>
   </>
 );

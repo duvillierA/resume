@@ -27,7 +27,7 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({ company, title, 
             </span>
             </h3>
             <div className="mt-2">{description}</div>
-            {introduction && <blockquote className="font-normal text-sm text-muted-foreground italic mt-2"><p>{introduction}</p></blockquote>}
+            {introduction && <blockquote className="border-l-2 border-l-border p-4 font-normal text-sm text-muted-foreground italic mt-2"><p>{introduction}</p></blockquote>}
         </div>
     );
 };

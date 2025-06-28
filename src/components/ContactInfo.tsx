@@ -1,41 +1,55 @@
 import React from "react";
+import { MailIcon, PhoneIcon, MapPinIcon, GithubIcon, LinkedinIcon, BuildingIcon, CodeIcon } from "lucide-react";
 
 interface ContactInfoProps {
+  company: string;
+  companyUrl: string;
   email?: string;
   github: string;
   linkedin: string;
-  company: string;
-  companyUrl: string;
   location: string;
+  telephone?: string;
 }
 
-export const ContactInfo: React.FC<ContactInfoProps> = ({ email, github, linkedin, company, companyUrl, location }) => (
-  <dl className="mt-4 text-sm grid grid-cols-[auto_1fr] gap-x-2 gap-y-1">
+const iconClassName = "w-4 h-4"
+
+export const ContactInfo: React.FC<ContactInfoProps> = ({ company, companyUrl, email, github, linkedin, location, telephone }) => (
+  <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-2 gap-y-1 text-sm">
     {!!email && (
-      <>
-        <dt>Email</dt>
-        <dd>
-          <a href={`mailto:${email}`}>{email}</a>
-        </dd>
-      </>
+      <ContactInfoItem label="Email" value={email} href={`mailto:${email}`} leftElement={<MailIcon className={iconClassName} />} />
     )}
-    <dt>Location</dt>
-    <dd>{location}</dd>
-    <dt>GitHub</dt>
-    <dd>
-      <a href={github}>{github}</a>
-    </dd>
-    <dt>LinkedIn</dt>
-    <dd>
-      <a href={linkedin}>{linkedin}</a>
-    </dd>
-    <dt>Company</dt>
-    <dd>
-      <a href={companyUrl}>{company}</a>
-    </dd>
-    <dt>Source code</dt>
-    <dd>
-      <a href={`https://github.com/duvillierA/resume`}>https://github.com/duvillierA/resume</a>
-    </dd>
+    {!!telephone && (
+      <ContactInfoItem label="Telephone" value={telephone} href={`tel:${telephone}`} leftElement={<PhoneIcon className={iconClassName} />} />
+    )}
+    <ContactInfoItem label="Location" value={location} leftElement={<MapPinIcon className={iconClassName} />} />
+    <ContactInfoItem label="GitHub" value={"View profile"} href={github} leftElement={<GithubIcon className={iconClassName} />} />
+    <ContactInfoItem label="LinkedIn" value={"View profile"} href={linkedin} leftElement={<LinkedinIcon className={iconClassName} />} />
+    <ContactInfoItem label="Company" value={company} href={companyUrl} leftElement={<BuildingIcon className={iconClassName} />} />
+    <ContactInfoItem label="Source code" value={"View repository"} href={`https://github.com/duvillierA/resume`} leftElement={<CodeIcon className={iconClassName} />} />
   </dl>
+);
+
+interface ContactInfoItemProps {
+  label: string;
+  value: string;
+  href?: string;
+  leftElement?: React.ReactNode;
+}
+
+const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ label, value, href, leftElement }) => (
+  <>
+    <dt className="flex items-center gap-2">
+      {leftElement}
+      {label}
+    </dt>
+    <dd>
+      {href ? (
+        <a href={href}>
+          {value}
+        </a>
+      ) : (
+        value
+      )}
+    </dd>
+  </>
 );

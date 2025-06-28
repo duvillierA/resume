@@ -25,4 +25,4 @@ export const profile = {
   },
   "location": "Full remote. Soorts-Hossegor, Nouvelle-Aquitaine, France.",
   "startDate": "2015-12"
-}
+} as const;

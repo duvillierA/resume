@@ -61,8 +61,8 @@ function App() {
             key={idx}
             company={item.company}
             title={item.title}
-            start_date={isPartialDate(item.start_date) ? item.start_date : isPartialDate(profile.startDate) ? profile.startDate : null}
-            end_date={isPartialDate(item.end_date) ? item.end_date : null}
+            startDate={isPartialDate(item.start_date) ? item.start_date : isPartialDate(profile.startDate) ? profile.startDate : null}
+            endDate={isPartialDate(item.end_date) ? item.end_date : null}
             remote={item.remote}
             link={isHttpsUrl(item.link) ? item.link : undefined}
             introduction={!!item.introduction && <Markdown>{item.introduction}</Markdown>}

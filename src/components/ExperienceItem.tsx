@@ -5,21 +5,21 @@ import { FormatPartialDate } from "@/components/common/date";
 interface ExperienceItemProps {
   company: string;
   title: string;
-  start_date: PartialDate | null;
-  end_date: PartialDate | null;
+  startDate: PartialDate | null;
+  endDate: PartialDate | null;
   remote: boolean;
   introduction?: React.ReactNode;
   description: React.ReactNode;
   link?: `https://${string}`;
 }
 
-export const ExperienceItem: React.FC<ExperienceItemProps> = ({ company, title, start_date, end_date, remote, introduction, description, link }) => {
+export const ExperienceItem: React.FC<ExperienceItemProps> = ({ company, title, startDate, endDate, remote, introduction, description, link }) => {
     return (
         <div className="mb-4">
             <h3 className="font-semibold mb-2">
             {company} - {title}
             <span className="text-sm font-normal text-foreground ml-2">
-                <em>({start_date && <FormatPartialDate date={start_date} />} - {end_date ? <FormatPartialDate date={end_date} /> : "Present"} { remote ? ", Remote" : ""})</em>
+                <em>({startDate && <FormatPartialDate date={startDate} />} - {endDate ? <FormatPartialDate date={endDate} /> : "Present"} { remote ? ", Remote" : ""})</em>
                 {link && (<small className="text-sm">
                     <a href={link} target="_blank" rel="noopener noreferrer" className="ml-2">{link}</a>
                 </small>

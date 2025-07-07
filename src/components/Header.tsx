@@ -8,7 +8,6 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({ name, title, children, tags }) => {
-
   return (
     <header>
     <div className="flex justify-between items-start">

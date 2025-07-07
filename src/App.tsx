@@ -2,8 +2,7 @@
 import "./App.css";
 
 // Utilities
-import { isHttpsUrl } from "@/lib/link";
-import { isPartialDate } from "@/lib/date";
+import { isHttpsUrl, isPartialDate } from "@/lib";
 
 // Components
 import { Section } from "@/components/Section";
@@ -70,7 +69,7 @@ function App() {
           />
         ))}
       </Section>
-      <PageBreak position="before" variant="always"  />
+      <PageBreak position="before" variant="always" />
       <Section title="Core Skills" asMarkdown>
         {coreSkills}
       </Section>

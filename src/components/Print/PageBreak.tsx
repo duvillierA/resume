@@ -1,12 +1,15 @@
-export const PageBreak = ({
-  variant = "always",
-  position = "before"
-}: {
+import { cn } from "@/lib";
+import type { ComponentProps } from "react";
+
+type PageBreakProps = {
   variant: "always" | "avoid"
   position: "before" | "after"
-}) => {
-  if (position === "before") {
-    return <div data-page-break-before={variant} />;
-  }
-  return <div data-page-break-after={variant} />;
+} & ComponentProps<"div">
+
+export const PageBreak = ({
+  variant,
+  position,
+  ...props
+}: PageBreakProps) => {
+  return <div {...props} className={cn(`page-break-${variant}-${position}`, props.className)} />;
 };

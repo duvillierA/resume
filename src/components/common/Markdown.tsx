@@ -1,6 +1,7 @@
+import type { ComponentProps } from "react";
 import ReactMarkdown from "react-markdown";
 
-export const Markdown = ({ children }: { children: Parameters<typeof ReactMarkdown>[0]['children'] }) => {
+export const Markdown: React.FC<ComponentProps<typeof ReactMarkdown>> = ({ children }) => {
   return <ReactMarkdown
   components={{
     a: ({ href, children }) => (

@@ -1,5 +1,5 @@
 import React from "react";
-import { type PartialDate } from "@/lib/date";
+import { type PartialDate } from "@/lib";
 import { FormatPartialDate } from "@/components/common/date";
 
 interface ExperienceItemProps {

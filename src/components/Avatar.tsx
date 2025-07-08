@@ -1,11 +1,7 @@
 import React from "react";
+import { cn } from "@/lib";
+import type { ComponentProps } from "react";
 
-interface AvatarProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
-
-export const Avatar: React.FC<AvatarProps> = ({ src, alt, className = "" }) => (
-  <img src={src} alt={alt} className={`w-18 h-auto rounded ${className}`} />
+export const Avatar: React.FC<ComponentProps<"img">> = ({ className, ...props }) => (
+  <img {...props} className={cn("w-18 h-auto rounded", className)} />
 );

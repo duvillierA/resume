@@ -31,6 +31,6 @@ type SectionProps = SectionBaseProps & (SectionNodeProps | SectionMarkdownProps)
 export const Section: React.FC<SectionProps> = ({ title, children, className, asMarkdown, ...props }) => (
   <section {...props} className={cn("flex flex-col gap-2", className)} >
     <h2 className="text-xl font-bold text-heading">{title}</h2>
-    {asMarkdown === true ? <Markdown>{children}</Markdown> : children}
+    {asMarkdown ? <Markdown>{children}</Markdown> : children}
   </section>
 );

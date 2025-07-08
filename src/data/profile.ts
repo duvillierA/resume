@@ -23,6 +23,6 @@ export const profile = {
     "name": "Virtuo",
     "url": "https://www.govirtuo.com"
   },
-  "location": "Soorts-Hossegor, Nouvelle-Aquitaine, France.",
+  "location": "Soorts-Hossegor, Nouvelle-Aquitaine, France",
   "startDate": "2015-12"
 } as const;

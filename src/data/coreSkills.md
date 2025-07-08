@@ -3,4 +3,4 @@
 - **Testing:** Vitest, Playwright
 - **Backend:** Node.js, Express.js, MongoDB, Redis
 - **Tooling:** Git, Webpack, Prismic, CI/CD, Vercel
-- **Design:** Figma, Photoshop 
+- **Design:** Figma, Photoshop

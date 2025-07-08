@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 import ReactMarkdown from "react-markdown";
 
-export const Markdown: React.FC<ComponentProps<typeof ReactMarkdown>> = ({ children }) => {
+export const Markdown: React.FC<ComponentProps<typeof ReactMarkdown>> = ({ children, ...props }) => {
   return <ReactMarkdown
   components={{
     a: ({ href, children }) => (
@@ -20,5 +20,6 @@ export const Markdown: React.FC<ComponentProps<typeof ReactMarkdown>> = ({ child
       <strong className="font-semibold">{children}</strong>
     ),
   }}
+  {...props}
   >{children}</ReactMarkdown>;
 };

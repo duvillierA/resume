@@ -24,7 +24,7 @@ import technicalHighlights from "@/data/technicalHighlights.md";
 import leadershipCollaboration from "@/data/leadershipCollaboration.md";
 import education from "@/data/education.md";
 import languages from "@/data/languages.md";
-import { SettingsMenu } from "./components/settings/menu";
+import { SettingsMenu } from "@/components/settings/menu";
 
 function App() {
   return (

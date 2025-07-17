@@ -53,7 +53,6 @@ function App() {
             company={profile.worksFor.name}
             linkedin={profile.sameAs[0]}
             companyUrl={profile.worksFor.url}
-            location={profile.location}
           />
         </Header>
         <Section title="Professional Summary" asMarkdown>

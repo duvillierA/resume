@@ -1,6 +1,5 @@
 import { Avatar } from "@/components/Avatar";
 import type { PropsWithChildren } from "react";
-import { SettingsMenu } from "@/components/settings/menu";
 
 interface HeaderProps {
   name: string;

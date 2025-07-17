@@ -7,13 +7,12 @@ interface ContactInfoProps {
   email?: string;
   github: string;
   linkedin: string;
-  location: string;
   telephone?: string;
 }
 
 const iconClassName = "w-4 h-4"
 
-export const ContactInfo: React.FC<ContactInfoProps> = ({ company, companyUrl, email, github, linkedin, location, telephone }) => (
+export const ContactInfo: React.FC<ContactInfoProps> = ({ company, companyUrl, email, github, linkedin, telephone }) => (
   <dl className="grid grid-cols-[auto_1fr] gap-x-2 text-sm">
     {!!email && (
       <ContactInfoItem value={email} href={`mailto:${email}`} leftElement={<MailIcon className={iconClassName} />} />
